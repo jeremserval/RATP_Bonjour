@@ -1,0 +1,14 @@
+/* 
+  Localizable_fr.strings
+  RATP_test
+
+  Created by Jeremie Serval on 01/08/2022.
+  
+*/
+
+"mainTitle" = "Toilettes Publiques";
+
+"error.default" = "Erreur: %@";
+"error.default.mbessage" = "Une erreur est survenue.";
+
+"prmAccess" = "Accès pour personne à mobilité réduite";

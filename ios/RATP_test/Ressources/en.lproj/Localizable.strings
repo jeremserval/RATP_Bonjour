@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  RATP_test
+
+  Created by Jeremie Serval on 01/08/2022.
+  
+*/
+
+"mainTitle" = "Public Toilets";
+
+"error.default" = "Error: %@";
+"error.default.message" = "Something went wrong";
+
+"prmAccess" = "Person with reduced mobility accessibility";
