@@ -24,6 +24,9 @@
 		4C95F6142899C8200090477A /* RATPDesign in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6132899C8200090477A /* RATPDesign */; };
 		4C95F6162899C8200090477A /* RATPL10n in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6152899C8200090477A /* RATPL10n */; };
 		4C95F6182899C8200090477A /* RATPNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6172899C8200090477A /* RATPNetwork */; };
+		4C95F6192899CD430090477A /* RATPDesign in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B53912899C5AC0007B3EC /* RATPDesign */; };
+		4C95F61A2899CD430090477A /* RATPL10n in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B53902899C5AC0007B3EC /* RATPL10n */; };
+		4C95F61B2899CD430090477A /* RATPNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B538F2899C5AC0007B3EC /* RATPNetwork */; };
 		4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */; };
 		4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5512899B46000A30591 /* HomeViewModel.swift */; };
 		4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */; };
@@ -357,6 +360,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C95F6192899CD430090477A /* RATPDesign in Resources */,
+				4C95F61A2899CD430090477A /* RATPL10n in Resources */,
+				4C95F61B2899CD430090477A /* RATPNetwork in Resources */,
 				4C2370AA28981CE6000B9B64 /* Preview Assets.xcassets in Resources */,
 				4C2370D228981E26000B9B64 /* Localizable.strings in Resources */,
 				4C2370A728981CE6000B9B64 /* Assets.xcassets in Resources */,
