@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RATPL10n
 
 struct PublicToiletCell: View {
     var viewModel: PublicToiletCellViewModel

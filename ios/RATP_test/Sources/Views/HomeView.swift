@@ -6,8 +6,6 @@
 //
 
 import Combine
-import RATPL10n
-import RATPNetwork
 import SwiftUI
 
 struct HomeView: View {

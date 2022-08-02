@@ -5,7 +5,6 @@
 //  Created by Jeremie Serval on 02/08/2022.
 //
 
-import RATPL10n
 import Foundation
 
 class PublicToiletCellViewModel {

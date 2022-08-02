@@ -21,12 +21,8 @@
 		4C4DD21428999C7200238991 /* PublicToiletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD21328999C7200238991 /* PublicToiletResponse.swift */; };
 		4C4DD2162899AAD300238991 /* PublicToiletGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD2152899AAD300238991 /* PublicToiletGeometry.swift */; };
 		4C4DD2182899AAF700238991 /* PublicToiletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD2172899AAF700238991 /* PublicToiletType.swift */; };
-		4C95F6142899C8200090477A /* RATPDesign in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6132899C8200090477A /* RATPDesign */; };
-		4C95F6162899C8200090477A /* RATPL10n in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6152899C8200090477A /* RATPL10n */; };
-		4C95F6182899C8200090477A /* RATPNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 4C95F6172899C8200090477A /* RATPNetwork */; };
-		4C95F6192899CD430090477A /* RATPDesign in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B53912899C5AC0007B3EC /* RATPDesign */; };
-		4C95F61A2899CD430090477A /* RATPL10n in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B53902899C5AC0007B3EC /* RATPL10n */; };
-		4C95F61B2899CD430090477A /* RATPNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B538F2899C5AC0007B3EC /* RATPNetwork */; };
+		4C95F6202899D0A20090477A /* RATPL10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61E2899D0A20090477A /* RATPL10n.swift */; };
+		4C95F6212899D0A20090477A /* RATPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61F2899D0A20090477A /* RATPNetwork.swift */; };
 		4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */; };
 		4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5512899B46000A30591 /* HomeViewModel.swift */; };
 		4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */; };
@@ -67,9 +63,8 @@
 		4C4DD21328999C7200238991 /* PublicToiletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletResponse.swift; sourceTree = "<group>"; };
 		4C4DD2152899AAD300238991 /* PublicToiletGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletGeometry.swift; sourceTree = "<group>"; };
 		4C4DD2172899AAF700238991 /* PublicToiletType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletType.swift; sourceTree = "<group>"; };
-		4C9B538F2899C5AC0007B3EC /* RATPNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RATPNetwork; sourceTree = "<group>"; };
-		4C9B53902899C5AC0007B3EC /* RATPL10n */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RATPL10n; sourceTree = "<group>"; };
-		4C9B53912899C5AC0007B3EC /* RATPDesign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RATPDesign; sourceTree = "<group>"; };
+		4C95F61E2899D0A20090477A /* RATPL10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPL10n.swift; sourceTree = "<group>"; };
+		4C95F61F2899D0A20090477A /* RATPNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPNetwork.swift; sourceTree = "<group>"; };
 		4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletFields.swift; sourceTree = "<group>"; };
 		4CB3C5512899B46000A30591 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCell.swift; sourceTree = "<group>"; };
@@ -81,10 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C95F6182899C8200090477A /* RATPNetwork in Frameworks */,
-				4C95F6162899C8200090477A /* RATPL10n in Frameworks */,
 				4C2370CE28981D79000B9B64 /* Alamofire in Frameworks */,
-				4C95F6142899C8200090477A /* RATPDesign in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,9 +121,6 @@
 		4C2370A128981CE5000B9B64 /* RATP_test */ = {
 			isa = PBXGroup;
 			children = (
-				4C9B53912899C5AC0007B3EC /* RATPDesign */,
-				4C9B53902899C5AC0007B3EC /* RATPL10n */,
-				4C9B538F2899C5AC0007B3EC /* RATPNetwork */,
 				4C2370A828981CE6000B9B64 /* Preview Content */,
 				4C2370CF28981E02000B9B64 /* Ressources */,
 				4C2370E12898202B000B9B64 /* Sources */,
@@ -188,6 +177,8 @@
 		4C2370E2289820DF000B9B64 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4C95F61E2899D0A20090477A /* RATPL10n.swift */,
+				4C95F61F2899D0A20090477A /* RATPNetwork.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,9 +255,6 @@
 			name = RATP_test;
 			packageProductDependencies = (
 				4C2370CD28981D79000B9B64 /* Alamofire */,
-				4C95F6132899C8200090477A /* RATPDesign */,
-				4C95F6152899C8200090477A /* RATPL10n */,
-				4C95F6172899C8200090477A /* RATPNetwork */,
 			);
 			productName = RATP_test;
 			productReference = 4C23709F28981CE5000B9B64 /* RATP_test.app */;
@@ -360,9 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C95F6192899CD430090477A /* RATPDesign in Resources */,
-				4C95F61A2899CD430090477A /* RATPL10n in Resources */,
-				4C95F61B2899CD430090477A /* RATPNetwork in Resources */,
 				4C2370AA28981CE6000B9B64 /* Preview Assets.xcassets in Resources */,
 				4C2370D228981E26000B9B64 /* Localizable.strings in Resources */,
 				4C2370A728981CE6000B9B64 /* Assets.xcassets in Resources */,
@@ -392,8 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4DD21428999C7200238991 /* PublicToiletResponse.swift in Sources */,
+				4C95F6212899D0A20090477A /* RATPNetwork.swift in Sources */,
 				4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */,
 				4CB3C5572899BFFF00A30591 /* PublicToiletCellViewModel.swift in Sources */,
+				4C95F6202899D0A20090477A /* RATPL10n.swift in Sources */,
 				4C4DD210289992DF00238991 /* PublicToiletModel.swift in Sources */,
 				4C4DD2162899AAD300238991 /* PublicToiletGeometry.swift in Sources */,
 				4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */,
@@ -757,18 +744,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C2370CC28981D79000B9B64 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		4C95F6132899C8200090477A /* RATPDesign */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RATPDesign;
-		};
-		4C95F6152899C8200090477A /* RATPL10n */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RATPL10n;
-		};
-		4C95F6172899C8200090477A /* RATPNetwork */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RATPNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
