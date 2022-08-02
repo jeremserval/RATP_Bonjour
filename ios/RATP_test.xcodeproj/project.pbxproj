@@ -166,7 +166,7 @@
 		4C2370E12898202B000B9B64 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4C2370E2289820DF000B9B64 /* Extensions */,
+				4C2370E2289820DF000B9B64 /* Modules */,
 				4C4DD20928998F5000238991 /* Models */,
 				4C4DD20B28998F7E00238991 /* ViewModels */,
 				4C4DD20A28998F5600238991 /* Views */,
@@ -174,13 +174,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		4C2370E2289820DF000B9B64 /* Extensions */ = {
+		4C2370E2289820DF000B9B64 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				4C95F61E2899D0A20090477A /* RATPL10n.swift */,
 				4C95F61F2899D0A20090477A /* RATPNetwork.swift */,
 			);
-			path = Extensions;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		4C2370E82898235D000B9B64 /* Frameworks */ = {
