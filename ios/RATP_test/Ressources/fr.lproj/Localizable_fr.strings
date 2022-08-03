@@ -8,7 +8,10 @@
 
 "mainTitle" = "Toilettes Publiques";
 
+/// Error
 "error.default" = "Erreur: %@";
 "error.default.mbessage" = "Une erreur est survenue.";
 
+/// Cell
 "prmAccess" = "Accès pour personne à mobilité réduite";
+"openingHours" = "Horaire d'ouverture: %@";

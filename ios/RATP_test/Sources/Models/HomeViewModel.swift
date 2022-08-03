@@ -7,18 +7,37 @@
 
 import Combine
 import Foundation
-import RATPNetwork
+import CoreLocation
 
 class HomeViewModel: ObservableObject {
     @Published var items: [PublicToiletModel]?
     @Published var showError: Bool = false
+    @Published var coordinate: CLLocationCoordinate2D? = nil
 
+    private var locationManager: RATPLocationManager = .init()
+    private let urlToilet: URL = URL(string: "https://data.ratp.fr/api/records/1.0/search/?dataset=sanisettesparis2011")!
+    
     var error: RATPNetworkError? = nil
     var cancellables: Set<AnyCancellable> = []
 
+    init() {
+        setupLocation()
+    }
+
+    private func setupLocation() {
+        locationManager.requestLocation()
+        locationManager.$location
+            .sink { [weak self] coordinate in
+                if let coordinate = coordinate {
+                    self?.coordinate = coordinate
+                }
+            }
+            .store(in: &cancellables)
+    }
+
     func refreshItems() {
         RATPNetwork<PublicToiletResponse>()
-            .request(url: URL(string: "https://data.ratp.fr/api/records/1.0/search/?dataset=sanisettesparis2011")!)
+            .request(url: urlToilet)
             .sink { result in
                 switch result {
                 case .failure(let error):
@@ -33,6 +52,5 @@ class HomeViewModel: ObservableObject {
                 self.items = response.records
             }
             .store(in: &cancellables)
-
     }
 }

@@ -23,6 +23,7 @@
 		4C4DD2182899AAF700238991 /* PublicToiletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD2172899AAF700238991 /* PublicToiletType.swift */; };
 		4C95F6202899D0A20090477A /* RATPL10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61E2899D0A20090477A /* RATPL10n.swift */; };
 		4C95F6212899D0A20090477A /* RATPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61F2899D0A20090477A /* RATPNetwork.swift */; };
+		4C95F626289AD55C0090477A /* RATPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F625289AD55C0090477A /* RATPLocation.swift */; };
 		4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */; };
 		4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5512899B46000A30591 /* HomeViewModel.swift */; };
 		4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */; };
@@ -65,6 +66,7 @@
 		4C4DD2172899AAF700238991 /* PublicToiletType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletType.swift; sourceTree = "<group>"; };
 		4C95F61E2899D0A20090477A /* RATPL10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPL10n.swift; sourceTree = "<group>"; };
 		4C95F61F2899D0A20090477A /* RATPNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPNetwork.swift; sourceTree = "<group>"; };
+		4C95F625289AD55C0090477A /* RATPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATPLocation.swift; sourceTree = "<group>"; };
 		4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletFields.swift; sourceTree = "<group>"; };
 		4CB3C5512899B46000A30591 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCell.swift; sourceTree = "<group>"; };
@@ -177,8 +179,9 @@
 		4C2370E2289820DF000B9B64 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4C95F61E2899D0A20090477A /* RATPL10n.swift */,
-				4C95F61F2899D0A20090477A /* RATPNetwork.swift */,
+				4C95F624289AD54A0090477A /* Location */,
+				4C95F622289AD35B0090477A /* L10n */,
+				4C95F623289AD3640090477A /* Network */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -215,6 +218,30 @@
 				4CB3C5562899BFFF00A30591 /* PublicToiletCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4C95F622289AD35B0090477A /* L10n */ = {
+			isa = PBXGroup;
+			children = (
+				4C95F61E2899D0A20090477A /* RATPL10n.swift */,
+			);
+			path = L10n;
+			sourceTree = "<group>";
+		};
+		4C95F623289AD3640090477A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C95F61F2899D0A20090477A /* RATPNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4C95F624289AD54A0090477A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				4C95F625289AD55C0090477A /* RATPLocation.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		4CB3C5502899B44900A30591 /* PublicToilet */ = {
@@ -381,6 +408,7 @@
 				4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */,
 				4CB3C5572899BFFF00A30591 /* PublicToiletCellViewModel.swift in Sources */,
 				4C95F6202899D0A20090477A /* RATPL10n.swift in Sources */,
+				4C95F626289AD55C0090477A /* RATPLocation.swift in Sources */,
 				4C4DD210289992DF00238991 /* PublicToiletModel.swift in Sources */,
 				4C4DD2162899AAD300238991 /* PublicToiletGeometry.swift in Sources */,
 				4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */,
@@ -565,8 +593,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RATP_test/Preview Content\"";
+				DEVELOPMENT_TEAM = DF957566X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need this information to get the distance from the current location ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -594,8 +625,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RATP_test/Preview Content\"";
+				DEVELOPMENT_TEAM = DF957566X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need this information to get the distance from the current location ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

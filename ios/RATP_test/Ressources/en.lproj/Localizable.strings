@@ -8,7 +8,11 @@
 
 "mainTitle" = "Public Toilets";
 
+/// Error
 "error.default" = "Error: %@";
 "error.default.message" = "Something went wrong";
 
+
+/// Cell
 "prmAccess" = "Person with reduced mobility accessibility";
+"openingHours" = "Opening hours: %@";

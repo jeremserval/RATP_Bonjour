@@ -2,16 +2,16 @@ import Alamofire
 import Combine
 import Foundation
 
-public struct RATPNetworkError: Error {
+struct RATPNetworkError: Error {
     let status: String
     let message: String
 }
 
-public struct RATPNetwork<Item: Codable> {
+struct RATPNetwork<Item: Codable> {
 
-    public init() { }
+    init() { }
 
-    public func request(url: URL) -> AnyPublisher<Item, RATPNetworkError> {
+    func request(url: URL) -> AnyPublisher<Item, RATPNetworkError> {
         Future<Item, RATPNetworkError> { promise in
             do {
                 AF.request(url,

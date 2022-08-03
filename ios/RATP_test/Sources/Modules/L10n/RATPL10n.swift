@@ -6,11 +6,16 @@ public enum L10n {
     }
 
     public static let mainTitle: String = L10n.localizedString(for: "mainTitle")
+
     public static let errorDefaultMessage: String = L10n.localizedString(for: "error.default.message")
     public static func errorMessage(message: String) -> String {
         L10n.tr("Localizable", "error.default", String(describing: message))
     }
+
     public static let prmAccess: String = L10n.localizedString(for: "prmAccess")
+    public static func openingHours(hours: String) -> String {
+        L10n.tr("Localizable", "openingHours", String(describing: hours))
+    }
 }
 
 extension L10n {

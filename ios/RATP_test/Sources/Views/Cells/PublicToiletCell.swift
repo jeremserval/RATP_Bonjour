@@ -18,38 +18,47 @@ struct PublicToiletCell: View {
 
             prmAccess
 
-           // distanceIfPermitted
+            distanceIfPermitted
+
             Divider()
         }
+        .background(Color.white)
     }
 
     var fullAddress: some View {
-        Text(viewModel.fullAddress)
-            .lineLimit(2)
+        imageText(imageName: "map", text: viewModel.fullAddress)
             .foregroundColor(.black)
     }
 
     var openingHour: some View {
-        Text(viewModel.openingHour)
+        imageText(imageName: "clock", text: viewModel.openingHour)
             .foregroundColor(.black)
+    }
+
+    private func imageText(imageName: String, text: String) -> some View {
+        HStack {
+            Image(systemName: imageName)
+                .font(.system(size: 20, weight: .bold))
+
+            Text(text)
+                .lineLimit(2)
+        }
     }
 
     var prmAccess: some View {
-        HStack {
-            Image(systemName: viewModel.isPrmAccess ? "checkmark" : "xmark")
-                .font(.system(size: 20, weight: .bold))
-            Text(viewModel.prmAccess)
-        }
+        imageText(imageName: viewModel.isPrmAccess ? "checkmark" : "xmark",
+                  text: viewModel.prmAccess)
         .padding(.vertical)
         .foregroundColor(viewModel.isPrmAccess ? .green : .red)
-
     }
 
+    @ViewBuilder
     var distanceIfPermitted: some View {
-        Text("distance")
+        if let coordinate = viewModel.coordinate {
+            Text("distance : \(coordinate.longitude) / \(coordinate.latitude)")
             .foregroundColor(.black)
+        }
     }
-
 }
 
 struct PublicToiletCell_Previews: PreviewProvider {

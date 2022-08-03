@@ -12,34 +12,38 @@ struct HomeView: View {
     @ObservedObject var model: HomeViewModel
 
     var body: some View {
-        ScrollView(.vertical) {
-            content()
-        }.onAppear {
-            model.refreshItems()
-        }
-        .sheet(isPresented: $model.showError) {
-            Text(L10n.errorMessage(message: model.error?.localizedDescription ?? L10n.errorDefaultMessage))
-            
-        }
-        
+
+        VStack(alignment: .center) {
+            Text(L10n.mainTitle)
+                .font(.system(.title))
+                .foregroundColor(.black)
+
+            ScrollView(.vertical) {
+                content()
+            }.onAppear {
+                model.refreshItems()
+            }
+            .sheet(isPresented: $model.showError) {
+                Text(L10n.errorMessage(message: model.error?.localizedDescription ?? L10n.errorDefaultMessage))
+            }
+        }.frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
     private func content() -> some View {
         if let items = model.items {
             LazyVStack(alignment : .leading) {
-                ForEach(items) { item in
+                ForEach(items.filter({ $0.fields.pmr == "Non" })) { item in
                     Button  {
 
                     } label: {
-                        PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item))
+                        PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item, coordinate: model.coordinate))
                             .padding()
                     }
-
                 }
             }
         } else {
-         ProgressView()
+            ProgressView()
                 .padding()
         }
     }
