@@ -14,32 +14,51 @@ struct HomeView: View {
     var body: some View {
 
         VStack(alignment: .center) {
-            Text(L10n.mainTitle)
-                .font(.system(.title))
-                .foregroundColor(.black)
+            title
 
-            ScrollView(.vertical) {
+            filter
+
+            Divider()
+
+            ScrollView(.vertical, showsIndicators: false) {
                 content()
-            }.onAppear {
+            }
+            .padding(.bottom)
+            .onAppear {
                 model.refreshItems()
             }
             .sheet(isPresented: $model.showError) {
                 Text(L10n.errorMessage(message: model.error?.localizedDescription ?? L10n.errorDefaultMessage))
             }
-        }.frame(maxWidth: .infinity)
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+
+    }
+
+    var title: some View {
+        Text(L10n.mainTitle)
+            .font(.system(.title))
+            .foregroundColor(.black)
+            .padding()
+    }
+
+    var filter: some View {
+        HStack {
+            Image(systemName: "person")
+            Toggle(L10n.disability, isOn: $model.accessibilityFilter)
+        }
+        .foregroundColor(.black)
+        .padding()
     }
 
     @ViewBuilder
     private func content() -> some View {
-        if let items = model.items {
+        if let items = model.itemsFiltered() {
             LazyVStack(alignment : .leading) {
-                ForEach(items.filter({ $0.fields.pmr == "Non" })) { item in
-                    Button  {
-
-                    } label: {
-                        PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item, coordinate: model.coordinate))
-                            .padding()
-                    }
+                ForEach(items, id: \.id) { item in
+                    PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item, coordinate: model.coordinate))
+                        .padding()
                 }
             }
         } else {

@@ -12,7 +12,10 @@
 "error.default" = "Error: %@";
 "error.default.message" = "Something went wrong";
 
+/// Home
+"disability.filter" = "Accessible routes";
 
 /// Cell
 "prmAccess" = "Person with reduced mobility accessibility";
 "openingHours" = "Opening hours: %@";
+"distance" = "distance: %@";

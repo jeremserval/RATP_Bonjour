@@ -13,10 +13,8 @@ struct RATP_testApp: App {
         WindowGroup {
             NavigationView {
                 HomeView(model: HomeViewModel())
-                    .background(Color.white)
                     .navigationBarHidden(true)
             }
-            .background(Color.white)
         }
     }
 }

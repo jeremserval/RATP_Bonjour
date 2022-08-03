@@ -5,6 +5,7 @@
 //  Created by Jeremie Serval on 02/08/2022.
 //
 
+import CoreLocation
 import SwiftUI
 
 struct PublicToiletCell: View {
@@ -12,7 +13,13 @@ struct PublicToiletCell: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            fullAddress
+            HStack {
+                fullAddress
+
+                Spacer()
+
+                openMapButton
+            }
 
             openingHour
 
@@ -22,7 +29,6 @@ struct PublicToiletCell: View {
 
             Divider()
         }
-        .background(Color.white)
     }
 
     var fullAddress: some View {
@@ -35,6 +41,13 @@ struct PublicToiletCell: View {
             .foregroundColor(.black)
     }
 
+    var prmAccess: some View {
+        imageText(imageName: viewModel.isPrmAccess ? "checkmark" : "xmark",
+                  text: viewModel.prmAccess)
+        .padding(.vertical)
+        .foregroundColor(viewModel.isPrmAccess ? .green : .red)
+    }
+
     private func imageText(imageName: String, text: String) -> some View {
         HStack {
             Image(systemName: imageName)
@@ -45,18 +58,22 @@ struct PublicToiletCell: View {
         }
     }
 
-    var prmAccess: some View {
-        imageText(imageName: viewModel.isPrmAccess ? "checkmark" : "xmark",
-                  text: viewModel.prmAccess)
-        .padding(.vertical)
-        .foregroundColor(viewModel.isPrmAccess ? .green : .red)
+    @ViewBuilder
+    var distanceIfPermitted: some View {
+        if let _ = viewModel.coordinate {
+            Text(viewModel.distance)
+                .foregroundColor(.black)
+        }
     }
 
     @ViewBuilder
-    var distanceIfPermitted: some View {
-        if let coordinate = viewModel.coordinate {
-            Text("distance : \(coordinate.longitude) / \(coordinate.latitude)")
-            .foregroundColor(.black)
+    var openMapButton: some View {
+        if viewModel.model.geometry.coordinates.count == 2 {
+            Button {
+                viewModel.openMap()
+            } label: {
+                Image(systemName: "location.fill")
+            }
         }
     }
 }

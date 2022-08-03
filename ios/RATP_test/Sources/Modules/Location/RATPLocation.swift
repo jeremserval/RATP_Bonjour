@@ -11,7 +11,7 @@ import Foundation
 
 class RATPLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
-    @Published var location: CLLocationCoordinate2D? = nil
+    @Published var coordinate: CLLocationCoordinate2D? = nil
 
     override init() {
         super.init()
@@ -20,7 +20,6 @@ class RATPLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
     }
 
     func requestLocation() {
-
         let status: CLAuthorizationStatus = locationManager.authorizationStatus
         if status == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
@@ -29,6 +28,16 @@ class RATPLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
         }
     }
 
+    static func distanceInKilometer(current: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> String {
+        let from: CLLocation = CLLocation(latitude: current.latitude, longitude: current.longitude)
+        let to: CLLocation = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
+
+        return String.init(format: "%.2f km", arguments: [from.distance(from: to) / 1000])
+    }
+}
+
+// Location manager
+extension RATPLocationManager {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
             case .authorizedAlways, .authorizedWhenInUse:
@@ -40,12 +49,11 @@ class RATPLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
         @unknown default:
             fatalError()
         }
-
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
-        self.location = location.coordinate
+        self.coordinate = location.coordinate
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -13,7 +13,8 @@ class HomeViewModel: ObservableObject {
     @Published var items: [PublicToiletModel]?
     @Published var showError: Bool = false
     @Published var coordinate: CLLocationCoordinate2D? = nil
-
+    @Published var accessibilityFilter: Bool = false
+    
     private var locationManager: RATPLocationManager = .init()
     private let urlToilet: URL = URL(string: "https://data.ratp.fr/api/records/1.0/search/?dataset=sanisettesparis2011")!
     
@@ -24,9 +25,22 @@ class HomeViewModel: ObservableObject {
         setupLocation()
     }
 
+    func itemsFiltered() -> [PublicToiletModel]? {
+        guard let items = items else {
+            return nil
+        }
+
+        if accessibilityFilter {
+            return items.filter { $0.fields.pmr == "Oui" }
+        } else {
+            return items
+        }
+
+    }
+
     private func setupLocation() {
         locationManager.requestLocation()
-        locationManager.$location
+        locationManager.$coordinate
             .sink { [weak self] coordinate in
                 if let coordinate = coordinate {
                     self?.coordinate = coordinate

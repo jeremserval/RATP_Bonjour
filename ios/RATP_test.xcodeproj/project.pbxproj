@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C2370A328981CE5000B9B64 /* RATP_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2370A228981CE5000B9B64 /* RATP_testApp.swift */; };
+		4C2370A328981CE5000B9B64 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2370A228981CE5000B9B64 /* mainView.swift */; };
 		4C2370A528981CE5000B9B64 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2370A428981CE5000B9B64 /* HomeView.swift */; };
 		4C2370A728981CE6000B9B64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2370A628981CE6000B9B64 /* Assets.xcassets */; };
 		4C2370AA28981CE6000B9B64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2370A928981CE6000B9B64 /* Preview Assets.xcassets */; };
@@ -49,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		4C23709F28981CE5000B9B64 /* RATP_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RATP_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C2370A228981CE5000B9B64 /* RATP_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATP_testApp.swift; sourceTree = "<group>"; };
+		4C2370A228981CE5000B9B64 /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		4C2370A428981CE5000B9B64 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C2370A628981CE6000B9B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2370A928981CE6000B9B64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,6 +67,7 @@
 		4C95F61E2899D0A20090477A /* RATPL10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPL10n.swift; sourceTree = "<group>"; };
 		4C95F61F2899D0A20090477A /* RATPNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPNetwork.swift; sourceTree = "<group>"; };
 		4C95F625289AD55C0090477A /* RATPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATPLocation.swift; sourceTree = "<group>"; };
+		4C95F627289B35D10090477A /* RATP-test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RATP-test-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletFields.swift; sourceTree = "<group>"; };
 		4CB3C5512899B46000A30591 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCell.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		4C2370A128981CE5000B9B64 /* RATP_test */ = {
 			isa = PBXGroup;
 			children = (
+				4C95F627289B35D10090477A /* RATP-test-Info.plist */,
 				4C2370A828981CE6000B9B64 /* Preview Content */,
 				4C2370CF28981E02000B9B64 /* Ressources */,
 				4C2370E12898202B000B9B64 /* Sources */,
@@ -206,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				4CB3C5532899BA3E00A30591 /* Cells */,
-				4C2370A228981CE5000B9B64 /* RATP_testApp.swift */,
 				4C2370A428981CE5000B9B64 /* HomeView.swift */,
+				4C2370A228981CE5000B9B64 /* mainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,7 +417,7 @@
 				4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */,
 				4C4DD2182899AAF700238991 /* PublicToiletType.swift in Sources */,
 				4C2370A528981CE5000B9B64 /* HomeView.swift in Sources */,
-				4C2370A328981CE5000B9B64 /* RATP_testApp.swift in Sources */,
+				4C2370A328981CE5000B9B64 /* mainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,11 +598,13 @@
 				DEVELOPMENT_TEAM = DF957566X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RATP-test-Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -628,11 +632,13 @@
 				DEVELOPMENT_TEAM = DF957566X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RATP-test-Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this information to get the distance from the current location ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
