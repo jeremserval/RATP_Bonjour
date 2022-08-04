@@ -12,33 +12,32 @@ struct PublicToiletCell: View {
     var viewModel: PublicToiletCellViewModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
+        HStack(alignment: .top) {
+
+            infos
+
+            Spacer()
+            
+            openMapButton
+        }
+    }
+
+    var infos: some View {
+        Button {
+            viewModel.completion()
+        } label: {
+            VStack(alignment: .leading, spacing: 8) {
                 fullAddress
-
-                Spacer()
-
-                openMapButton
+                openingHour
+                prmAccess
+                distanceIfPermitted
             }
-
-            openingHour
-
-            prmAccess
-
-            distanceIfPermitted
-
-            Divider()
-                .padding(.top)
         }
     }
 
     var fullAddress: some View {
-        Button {
-            viewModel.completion()
-        } label: {
-            imageText(imageName: "map", text: viewModel.fullAddress)
-                .foregroundColor(.black)
-        }
+        imageText(imageName: "map", text: viewModel.fullAddress)
+            .foregroundColor(.black)
     }
 
     var openingHour: some View {
@@ -59,6 +58,7 @@ struct PublicToiletCell: View {
                 .font(.system(size: 20, weight: .bold))
 
             Text(text)
+                .multilineTextAlignment(.leading)
                 .lineLimit(2)
         }
     }

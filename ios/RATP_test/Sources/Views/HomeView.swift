@@ -81,6 +81,8 @@ struct HomeView: View {
                         shouldPresentDetail.toggle()
                     }))
                     .padding()
+
+                    Divider()
                 }
             }
         } else {
