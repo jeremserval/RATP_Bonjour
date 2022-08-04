@@ -16,7 +16,6 @@
 		4C2370C028981CE6000B9B64 /* RATP_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2370BF28981CE6000B9B64 /* RATP_testUITestsLaunchTests.swift */; };
 		4C2370CE28981D79000B9B64 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2370CD28981D79000B9B64 /* Alamofire */; };
 		4C2370D228981E26000B9B64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C2370D428981E26000B9B64 /* Localizable.strings */; };
-		4C2370D728981E3C000B9B64 /* Localizable_fr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C2370D928981E3C000B9B64 /* Localizable_fr.strings */; };
 		4C4DD210289992DF00238991 /* PublicToiletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD20F289992DF00238991 /* PublicToiletModel.swift */; };
 		4C4DD21428999C7200238991 /* PublicToiletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD21328999C7200238991 /* PublicToiletResponse.swift */; };
 		4C4DD2162899AAD300238991 /* PublicToiletGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DD2152899AAD300238991 /* PublicToiletGeometry.swift */; };
@@ -24,6 +23,7 @@
 		4C95F6202899D0A20090477A /* RATPL10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61E2899D0A20090477A /* RATPL10n.swift */; };
 		4C95F6212899D0A20090477A /* RATPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61F2899D0A20090477A /* RATPNetwork.swift */; };
 		4C95F626289AD55C0090477A /* RATPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F625289AD55C0090477A /* RATPLocation.swift */; };
+		4C95F62A289B41230090477A /* PublicToiletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F629289B41230090477A /* PublicToiletDetailView.swift */; };
 		4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */; };
 		4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5512899B46000A30591 /* HomeViewModel.swift */; };
 		4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */; };
@@ -59,7 +59,6 @@
 		4C2370BD28981CE6000B9B64 /* RATP_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATP_testUITests.swift; sourceTree = "<group>"; };
 		4C2370BF28981CE6000B9B64 /* RATP_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATP_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4C2370D328981E26000B9B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4C2370D828981E3C000B9B64 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable_fr.strings; sourceTree = "<group>"; };
 		4C4DD20F289992DF00238991 /* PublicToiletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletModel.swift; sourceTree = "<group>"; };
 		4C4DD21328999C7200238991 /* PublicToiletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletResponse.swift; sourceTree = "<group>"; };
 		4C4DD2152899AAD300238991 /* PublicToiletGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletGeometry.swift; sourceTree = "<group>"; };
@@ -68,6 +67,8 @@
 		4C95F61F2899D0A20090477A /* RATPNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RATPNetwork.swift; sourceTree = "<group>"; };
 		4C95F625289AD55C0090477A /* RATPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATPLocation.swift; sourceTree = "<group>"; };
 		4C95F627289B35D10090477A /* RATP-test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RATP-test-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4C95F628289B3CD60090477A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C95F629289B41230090477A /* PublicToiletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletDetailView.swift; sourceTree = "<group>"; };
 		4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletFields.swift; sourceTree = "<group>"; };
 		4CB3C5512899B46000A30591 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCell.swift; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 			children = (
 				4C2370A628981CE6000B9B64 /* Assets.xcassets */,
 				4C2370D428981E26000B9B64 /* Localizable.strings */,
-				4C2370D928981E3C000B9B64 /* Localizable_fr.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -210,6 +210,7 @@
 				4CB3C5532899BA3E00A30591 /* Cells */,
 				4C2370A428981CE5000B9B64 /* HomeView.swift */,
 				4C2370A228981CE5000B9B64 /* mainView.swift */,
+				4C95F629289B41230090477A /* PublicToiletDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,7 +381,6 @@
 				4C2370AA28981CE6000B9B64 /* Preview Assets.xcassets in Resources */,
 				4C2370D228981E26000B9B64 /* Localizable.strings in Resources */,
 				4C2370A728981CE6000B9B64 /* Assets.xcassets in Resources */,
-				4C2370D728981E3C000B9B64 /* Localizable_fr.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +418,7 @@
 				4C4DD2182899AAF700238991 /* PublicToiletType.swift in Sources */,
 				4C2370A528981CE5000B9B64 /* HomeView.swift in Sources */,
 				4C2370A328981CE5000B9B64 /* mainView.swift in Sources */,
+				4C95F62A289B41230090477A /* PublicToiletDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,16 +459,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				4C2370D328981E26000B9B64 /* en */,
+				4C95F628289B3CD60090477A /* fr */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		4C2370D928981E3C000B9B64 /* Localizable_fr.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C2370D828981E3C000B9B64 /* fr */,
-			);
-			name = Localizable_fr.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var model: HomeViewModel
+    @State var shouldPresentDetail: Bool = false
+    @State var selectedItem: PublicToiletModel? = nil
 
     var body: some View {
 
@@ -20,20 +22,35 @@ struct HomeView: View {
 
             Divider()
 
-            ScrollView(.vertical, showsIndicators: false) {
-                content()
-            }
-            .padding(.bottom)
-            .onAppear {
-                model.refreshItems()
-            }
-            .sheet(isPresented: $model.showError) {
-                Text(L10n.errorMessage(message: model.error?.localizedDescription ?? L10n.errorDefaultMessage))
-            }
+            scrollView
+
+            NavigationLink(destination: destination(), isActive: $shouldPresentDetail, label: {})
         }
         .frame(maxWidth: .infinity)
         .background(Color.white)
 
+    }
+
+    var scrollView: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            content()
+        }
+        .padding(.bottom)
+        .onAppear {
+            model.refreshItems()
+        }
+        .sheet(isPresented: $model.showError) {
+            Text(L10n.errorMessage(message: model.error?.localizedDescription ?? L10n.errorDefaultMessage))
+        }
+    }
+
+    @ViewBuilder
+    func destination() -> some View {
+        if let selectedItem = selectedItem {
+            PublicToiletDetailView(model: selectedItem)
+        } else {
+            EmptyView()
+        }
     }
 
     var title: some View {
@@ -57,8 +74,13 @@ struct HomeView: View {
         if let items = model.itemsFiltered() {
             LazyVStack(alignment : .leading) {
                 ForEach(items, id: \.id) { item in
-                    PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item, coordinate: model.coordinate))
-                        .padding()
+                    PublicToiletCell(viewModel: PublicToiletCellViewModel(model: item,
+                                                                          coordinate: model.coordinate,
+                                                                          completion: {
+                        selectedItem = item
+                        shouldPresentDetail.toggle()
+                    }))
+                    .padding()
                 }
             }
         } else {

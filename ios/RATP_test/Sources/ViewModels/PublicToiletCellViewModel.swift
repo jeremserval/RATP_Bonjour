@@ -11,39 +11,55 @@ import Foundation
 import UIKit
 
 class PublicToiletCellViewModel: ObservableObject {
-    let model: PublicToiletModel
+
+    let openingHour: String
+    let isPrmAccess: Bool
+    var longitude: Double? = nil
+    var latitude: Double? = nil
+    let fullAddress: String
+
+    var prmAccess: String { L10n.prmAccess }
+
+    var completion: (() -> Void)
 
     @Published var coordinate: CLLocationCoordinate2D? = nil
 
-    init(model: PublicToiletModel, coordinate: CLLocationCoordinate2D? = nil) {
-        self.model = model
+    init(model: PublicToiletModel, coordinate: CLLocationCoordinate2D? = nil, completion: @escaping (() -> Void)) {
         self.coordinate = coordinate
-    }
+        self.completion = completion
 
-    var fullAddress: String {
-        if let arrondissement = model.fields.arrondissement {
-            return "\(model.fields.adresse), \(arrondissement)"
+        self.openingHour = model.fields.horaire
+        self.isPrmAccess = model.fields.pmr == "Oui"
+
+        if model.geometry.coordinates.count == 2 {
+            self.longitude = model.geometry.coordinates[0]
+            self.latitude = model.geometry.coordinates[1]
         }
-        return "\(model.fields.adresse)"
+
+        if let arrondissement = model.fields.arrondissement {
+            self.fullAddress = "\(model.fields.adresse), \(arrondissement)"
+        } else {
+            self.fullAddress = "\(model.fields.adresse)"
+        }
+
     }
 
-    var openingHour: String { model.fields.horaire }
-    var prmAccess: String { L10n.prmAccess }
-    var isPrmAccess: Bool { model.fields.pmr == "Oui" }
     var distance: String {
-
-        guard let coordinate = coordinate else {
+        guard let coordinate = coordinate, let latitude = latitude, let longitude = longitude else {
             return ""
         }
 
-        let destination: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: model.geometry.coordinates[1],
-                                                                         longitude: model.geometry.coordinates[0])
-
+        let destination: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude,
+                                                                         longitude: longitude)
         return L10n.distance(RATPLocationManager.distanceInKilometer(current: coordinate, destination: destination))
     }
 
     func openMap() {
-        let url = URL(string: "maps://?saddr=&daddr=\(model.geometry.coordinates[1]),\(model.geometry.coordinates[0])")
+        guard let latitude = latitude, let longitude = longitude else {
+            return
+        }
+
+        let url = URL(string: "maps://?saddr=&daddr=\(latitude),\(longitude)")
         if UIApplication.shared.canOpenURL(url!) {
               UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         }
@@ -52,6 +68,6 @@ class PublicToiletCellViewModel: ObservableObject {
 
 extension PublicToiletCellViewModel {
     static var mock: PublicToiletCellViewModel {
-        PublicToiletCellViewModel(model: .mock)
+        PublicToiletCellViewModel(model: .mock, completion: {})
     }
 }

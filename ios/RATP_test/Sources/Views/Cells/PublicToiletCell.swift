@@ -28,12 +28,17 @@ struct PublicToiletCell: View {
             distanceIfPermitted
 
             Divider()
+                .padding(.top)
         }
     }
 
     var fullAddress: some View {
-        imageText(imageName: "map", text: viewModel.fullAddress)
-            .foregroundColor(.black)
+        Button {
+            viewModel.completion()
+        } label: {
+            imageText(imageName: "map", text: viewModel.fullAddress)
+                .foregroundColor(.black)
+        }
     }
 
     var openingHour: some View {
@@ -68,12 +73,10 @@ struct PublicToiletCell: View {
 
     @ViewBuilder
     var openMapButton: some View {
-        if viewModel.model.geometry.coordinates.count == 2 {
-            Button {
-                viewModel.openMap()
-            } label: {
-                Image(systemName: "location.fill")
-            }
+        Button {
+            viewModel.openMap()
+        } label: {
+            Image(systemName: "location.fill")
         }
     }
 }

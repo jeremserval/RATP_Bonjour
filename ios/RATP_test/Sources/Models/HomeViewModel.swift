@@ -11,6 +11,7 @@ import CoreLocation
 
 class HomeViewModel: ObservableObject {
     @Published var items: [PublicToiletModel]?
+
     @Published var showError: Bool = false
     @Published var coordinate: CLLocationCoordinate2D? = nil
     @Published var accessibilityFilter: Bool = false
