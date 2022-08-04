@@ -31,12 +31,14 @@ class RATPLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
     static func distanceInKilometer(current: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> String {
         let from: CLLocation = CLLocation(latitude: current.latitude, longitude: current.longitude)
         let to: CLLocation = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
+        var distance = from.distance(from: to)
+        if distance > 0.0 { distance /= 1000 }
 
-        return String.init(format: "%.2f km", arguments: [from.distance(from: to) / 1000])
+        return String.init(format: "%.2f km", arguments: [distance])
     }
 }
 
-// Location manager
+// Location manager functions
 extension RATPLocationManager {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {

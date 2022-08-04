@@ -24,6 +24,8 @@
 		4C95F6212899D0A20090477A /* RATPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F61F2899D0A20090477A /* RATPNetwork.swift */; };
 		4C95F626289AD55C0090477A /* RATPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F625289AD55C0090477A /* RATPLocation.swift */; };
 		4C95F62A289B41230090477A /* PublicToiletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F629289B41230090477A /* PublicToiletDetailView.swift */; };
+		4C95F62C289BDA5F0090477A /* PublicToiletCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F62B289BDA5F0090477A /* PublicToiletCellViewModelTest.swift */; };
+		4C95F62E289BDD2D0090477A /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F62D289BDD2D0090477A /* HomeViewModelTest.swift */; };
 		4CB3C54F2899B42300A30591 /* PublicToiletFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */; };
 		4CB3C5522899B46000A30591 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5512899B46000A30591 /* HomeViewModel.swift */; };
 		4CB3C5552899BA5700A30591 /* PublicToiletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */; };
@@ -69,6 +71,8 @@
 		4C95F627289B35D10090477A /* RATP-test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RATP-test-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4C95F628289B3CD60090477A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C95F629289B41230090477A /* PublicToiletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletDetailView.swift; sourceTree = "<group>"; };
+		4C95F62B289BDA5F0090477A /* PublicToiletCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCellViewModelTest.swift; sourceTree = "<group>"; };
+		4C95F62D289BDD2D0090477A /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		4CB3C54E2899B42300A30591 /* PublicToiletFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletFields.swift; sourceTree = "<group>"; };
 		4CB3C5512899B46000A30591 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CB3C5542899BA5700A30591 /* PublicToiletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicToiletCell.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				4C2370B328981CE6000B9B64 /* RATP_testTests.swift */,
+				4C95F62B289BDA5F0090477A /* PublicToiletCellViewModelTest.swift */,
+				4C95F62D289BDD2D0090477A /* HomeViewModelTest.swift */,
 			);
 			path = RATP_testTests;
 			sourceTree = "<group>";
@@ -426,7 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C95F62E289BDD2D0090477A /* HomeViewModelTest.swift in Sources */,
 				4C2370B428981CE6000B9B64 /* RATP_testTests.swift in Sources */,
+				4C95F62C289BDA5F0090477A /* PublicToiletCellViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

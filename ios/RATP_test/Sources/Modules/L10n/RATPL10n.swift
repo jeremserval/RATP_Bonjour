@@ -6,9 +6,7 @@ public enum L10n {
     }
 
     public static let mainTitle: String = L10n.localizedString(for: "mainTitle")
-
     public static let disability: String = L10n.localizedString(for: "disability.filter")
-
 
     public static let errorDefaultMessage: String = L10n.localizedString(for: "error.default.message")
     public static func errorMessage(message: String) -> String {

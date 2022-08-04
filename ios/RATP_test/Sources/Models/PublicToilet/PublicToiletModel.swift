@@ -7,7 +7,8 @@
 
 import Foundation
 
-public class PublicToiletModel: Identifiable, Codable {
+public class PublicToiletModel: Identifiable, Codable{
+
     public var id: String
     public var datasetId: String
     public var recordTimestamp: String
@@ -40,10 +41,21 @@ public class PublicToiletModel: Identifiable, Codable {
     }
 }
 
+extension PublicToiletModel: Equatable {
+    public static func == (lhs: PublicToiletModel, rhs: PublicToiletModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 extension PublicToiletModel {
     static var mock: PublicToiletModel {
         PublicToiletModel(id: "01", recordId: "01", recordTimestamp: "",
               geometry: PublicToiletGeometry(type: "TOILETTES", coordinates: [0, 0]),
               fields: PublicToiletFields.mock)
+    }
+    static var mockWithPMR: PublicToiletModel {
+        PublicToiletModel(id: "01", recordId: "01", recordTimestamp: "",
+              geometry: PublicToiletGeometry(type: "TOILETTES", coordinates: [0, 0]),
+              fields: PublicToiletFields.mockWithPMR)
     }
 }

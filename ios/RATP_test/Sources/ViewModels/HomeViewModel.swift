@@ -32,9 +32,9 @@ class HomeViewModel: ObservableObject {
 
         if accessibilityFilter {
             return items.filter { $0.isPrm }
-        } else {
-            return items
         }
+        
+        return items
     }
 
     private func setupLocation() {

@@ -56,11 +56,20 @@ public class PublicToiletFields: Codable {
 }
 
 extension PublicToiletFields {
-    static var mock: PublicToiletFields {
+    static var mockWithPMR: PublicToiletFields {
         .init(complementAdresse: "numero_de_voie nom_de_voie",
               shape: PublicToiletShape(type: "MultiPoint", coordinates: [[2.34445799806018, 48.899388215542245]]),
               horaire: "6 h - 22 h", pmr: "Oui", arrondissement: 75012, geo2d: [48.899388215542245, 2.34445799806018],
               source: "http://opendata.paris.fr", gestionnaire: "Toilette publique de la Ville de Paris",
               adresse: "1  AVENUE RENE COTY", type: .sanisette)
     }
+
+    static var mock: PublicToiletFields {
+        .init(complementAdresse: "numero_de_voie nom_de_voie",
+              shape: PublicToiletShape(type: "MultiPoint", coordinates: [[2.34445799806018, 48.899388215542245]]),
+              horaire: "6 h - 22 h", pmr: "Non", arrondissement: 75012, geo2d: [48.899388215542245, 2.34445799806018],
+              source: "http://opendata.paris.fr", gestionnaire: "Toilette publique de la Ville de Paris",
+              adresse: "1  AVENUE RENE COTY", type: .sanisette)
+    }
+
 }
