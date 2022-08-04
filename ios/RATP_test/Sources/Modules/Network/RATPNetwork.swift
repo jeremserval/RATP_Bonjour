@@ -8,9 +8,7 @@ struct RATPNetworkError: Error {
 }
 
 struct RATPNetwork<Item: Codable> {
-    
-    init() { }
-    
+
     func request(url: URL) -> AnyPublisher<Item, RATPNetworkError> {
         Future<Item, RATPNetworkError> { promise in
             do {
@@ -19,10 +17,10 @@ struct RATPNetwork<Item: Codable> {
                 .validate()
                 .responseDecodable(completionHandler: { (response : AFDataResponse<Item>) in
                     switch response.result {
-                        
+
                     case .success(let data):
                         promise(.success(data))
-                        
+
                     case .failure(let error):
                         promise(.failure(RATPNetworkError(status: "\(error.responseCode ?? -1)",
                                                           message: error.localizedDescription)))

@@ -14,7 +14,6 @@ struct HomeView: View {
     @State var selectedItem: PublicToiletModel? = nil
 
     var body: some View {
-
         VStack(alignment: .center) {
             title
 
@@ -28,7 +27,6 @@ struct HomeView: View {
         }
         .frame(maxWidth: .infinity)
         .background(Color.white)
-
     }
 
     var scrollView: some View {

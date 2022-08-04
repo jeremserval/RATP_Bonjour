@@ -11,7 +11,7 @@ struct PublicToiletDetailView: View {
     var model: PublicToiletModel
 
     var body: some View {
-        Text("Hello, World! \(model.fields.adresse)")
+        Text("\(model.fields.adresse)")
             .transition(.move(edge: .leading))
     }
 }

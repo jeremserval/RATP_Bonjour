@@ -14,6 +14,10 @@ public class PublicToiletModel: Identifiable, Codable {
     public var geometry: PublicToiletGeometry
     public var fields: PublicToiletFields
 
+    public var isPrm: Bool {
+        fields.pmr == "Oui"
+    }
+
     public init(id: String,
                 recordId: String,
                 recordTimestamp: String,
@@ -25,6 +29,7 @@ public class PublicToiletModel: Identifiable, Codable {
         self.geometry = geometry
         self.fields = fields
     }
+
 
     public enum CodingKeys: String, CodingKey {
         case id = "recordid"

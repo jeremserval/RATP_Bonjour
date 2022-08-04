@@ -11,7 +11,6 @@ import CoreLocation
 
 class HomeViewModel: ObservableObject {
     @Published var items: [PublicToiletModel]?
-
     @Published var showError: Bool = false
     @Published var coordinate: CLLocationCoordinate2D? = nil
     @Published var accessibilityFilter: Bool = false
@@ -32,11 +31,10 @@ class HomeViewModel: ObservableObject {
         }
 
         if accessibilityFilter {
-            return items.filter { $0.fields.pmr == "Oui" }
+            return items.filter { $0.isPrm }
         } else {
             return items
         }
-
     }
 
     private func setupLocation() {

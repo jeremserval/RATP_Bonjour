@@ -14,12 +14,10 @@ class PublicToiletCellViewModel: ObservableObject {
 
     let openingHour: String
     let isPrmAccess: Bool
+    let fullAddress: String
     var longitude: Double? = nil
     var latitude: Double? = nil
-    let fullAddress: String
-
     var prmAccess: String { L10n.prmAccess }
-
     var completion: (() -> Void)
 
     @Published var coordinate: CLLocationCoordinate2D? = nil
@@ -29,7 +27,7 @@ class PublicToiletCellViewModel: ObservableObject {
         self.completion = completion
 
         self.openingHour = model.fields.horaire
-        self.isPrmAccess = model.fields.pmr == "Oui"
+        self.isPrmAccess = model.isPrm
 
         if model.geometry.coordinates.count == 2 {
             self.longitude = model.geometry.coordinates[0]

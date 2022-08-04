@@ -13,11 +13,8 @@ struct PublicToiletCell: View {
 
     var body: some View {
         HStack(alignment: .top) {
-
             infos
-
-            Spacer()
-            
+            Spacer()            
             openMapButton
         }
     }

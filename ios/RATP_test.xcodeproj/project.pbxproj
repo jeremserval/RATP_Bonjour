@@ -125,10 +125,10 @@
 		4C2370A128981CE5000B9B64 /* RATP_test */ = {
 			isa = PBXGroup;
 			children = (
-				4C95F627289B35D10090477A /* RATP-test-Info.plist */,
-				4C2370A828981CE6000B9B64 /* Preview Content */,
-				4C2370CF28981E02000B9B64 /* Ressources */,
 				4C2370E12898202B000B9B64 /* Sources */,
+				4C2370A828981CE6000B9B64 /* Preview Content */,
+				4C95F627289B35D10090477A /* RATP-test-Info.plist */,
+				4C2370CF28981E02000B9B64 /* Ressources */,
 			);
 			path = RATP_test;
 			sourceTree = "<group>";
@@ -199,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				4CB3C5502899B44900A30591 /* PublicToilet */,
-				4CB3C5512899B46000A30591 /* HomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +217,7 @@
 		4C4DD20B28998F7E00238991 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4CB3C5512899B46000A30591 /* HomeViewModel.swift */,
 				4CB3C5562899BFFF00A30591 /* PublicToiletCellViewModel.swift */,
 			);
 			path = ViewModels;
